@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import CaptureImageComponent from "./CaptureImageComponent";
 import PreviewComponent from "./PreviewComponent";
-import ref from "./assets/ref.png";
 import axios from "axios";
 
 export const dataURItoBlob = (dataURI: string): Blob => {
