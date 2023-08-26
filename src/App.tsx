@@ -73,10 +73,10 @@ function App() {
           responseType: "arraybuffer",
         })
         .then((res) => {
-          console.log(res.data);
-          const imageBlob = new Blob([res.data], { type: "image/jpeg" });
-          const imageRes = URL.createObjectURL(imageBlob);
-          setImage(imageRes);
+          // console.log(res.data);
+          // const imageBlob = new Blob([res.data], { type: "image/jpeg" });
+          // const imageRes = URL.createObjectURL(imageBlob);
+          setImage(res.data.image);
         });
     }
   };
