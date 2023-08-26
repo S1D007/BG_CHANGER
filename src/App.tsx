@@ -86,6 +86,8 @@ function App() {
   const handleRetryClick = () => {
     setCapturedImage(null);
     setShowButtons(false);
+    formData.delete("target_image");
+    formData.delete("input_image");
   };
   return (
     <div className="w-full flex justify-center items-center flex-col p-2">
