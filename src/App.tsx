@@ -70,10 +70,10 @@ function App() {
 
       axios
         .post("https://ai-photobooth.cyclic.cloud/bg-changer", formData, {
-          responseType: "arraybuffer",
+          // responseType: "arraybuffer",
         })
         .then((res) => {
-          // console.log(res.data);
+          console.log(res.data);
           // const imageBlob = new Blob([res.data], { type: "image/jpeg" });
           // const imageRes = URL.createObjectURL(imageBlob);
           setImage(res.data.image);
