@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import download from "./assets/download.png";
 import email from "./assets/email.png";
 import QRCode from "react-qr-code";
+import axios from "axios";
 type PreviewComponentProps = {
   image: string;
 };
@@ -43,13 +44,17 @@ const PreviewComponent: React.FC<PreviewComponentProps> = ({ image }) => {
           <p className="text-white font-bold text-3xl">QR</p>
         </button>
         <button
-          onClick={() => {
-            //download image
+          onClick={async () => {
+            const response = await axios.get(image, {
+              responseType: "blob",
+            });
+            const blob = new Blob([response.data], { type: "image/jpeg" });
+            const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
-            link.href = image;
-            link.download = "swaped_image_go_kapture.jpeg";
-            document.body.appendChild(link);
+            link.href = url;
+            link.download = "chandryan.jpeg";
             link.click();
+            URL.revokeObjectURL(url);
           }}
           className="h-24 w-24 bg-black rounded-full flex justify-center items-center "
         >

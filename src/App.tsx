@@ -70,7 +70,6 @@ function App() {
 
       axios
         .post("https://ai-photobooth.cyclic.cloud/bg-changer", formData, {
-          // responseType: "arraybuffer",
         })
         .then((res) => {
           console.log(res.data);
